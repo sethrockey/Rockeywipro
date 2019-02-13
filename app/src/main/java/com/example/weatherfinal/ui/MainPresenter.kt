@@ -20,7 +20,6 @@ class MainPresenter(val view: MainView) {
         api.dailyForecast(cityName, 5).enqueue(object : Callback<WeatherResponse> {
             override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {
                 response.body()?.let {
-                    //This method will be created in the next step.
                     createListForView(it)
                     view.hideSpinner()
                 } ?: view.showErrorToast(ErrorTypes.NO_RESULT_FOUND)

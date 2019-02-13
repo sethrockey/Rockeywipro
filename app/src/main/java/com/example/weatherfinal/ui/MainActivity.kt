@@ -82,7 +82,6 @@ class MainActivity : AppCompatActivity(),MainView {
             searchMenuItem.queryHint = getString(R.string.menu_search_hint)
             searchMenuItem.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String): Boolean {
-                    //This method will be created in next steps
                     getForecast(query)
                     menuItem.collapseActionView()
                     return false
